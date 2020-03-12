@@ -6,12 +6,12 @@
 	if(isset($_POST['login'])){
 		$username= $_POST['username'];
 		$password= $_POST['password'];
-		
-	$sql = "select * from SCHOOL_ADMIN_PERMISSION where admin_id = '$username' AND password = '$password'";
+			
+	$sql = "select * from SCHOOL_ADMIN_PERMISSION where username = '$username' AND password = '$password'";
 	$result = mysqli_query($conn,$sql);
 	if ($result) {
     $row = mysqli_fetch_array($result);
-	if($row['admin_id'] == $username && $row['password']== $password){
+	if($row['username'] == $username && $row['password']== $password){
 		header("location:hello.html");
 	}else{
 		echo "failed to login";
