@@ -4,16 +4,17 @@
     {
         $UserID = $_GET['edit'];
         $name = $_POST['name'];
+		$level = $_POST['level'];
         $address = $_POST['address'];
         $email = $_POST['email'];
-		$phone = $_POST['phone'];
+		$school_id = $_POST['id'];
  
-        $query = " update SCHOOL set school_name = '".$name."', school_address='".$address."',school_email='".$email."',school_phone='".$phone."' where school_id='".$UserID."'";
+        $query = " update STUDENT set student_name = '".$name."',student_level='".$level."',student_address='".$address."',student_email='".$email."',school_id='".$school_id."' where student_id='".$UserID."'";
         $result = mysqli_query($conn,$query);
  
         if($result)
         {
-            header("location:displaySchool.php");
+            header("location:displayStudent.php");
         }
         else
         {
@@ -22,6 +23,6 @@
     }
     else
     {
-        header("location:displaySchool.php");
+        header("location:displayStudent.php");
     }
 ?>

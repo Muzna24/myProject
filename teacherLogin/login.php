@@ -11,11 +11,11 @@ $cookie_name = "loggedin";
 		
 		//$phash = sha1(sha1($pass."salt")."salt");
 		
-	$sql = "select * from SCHOOL_ADMIN_PERMISSION WHERE username = '$user' AND password = '$pass'";
+	$sql = "select * from TEACHER_PERMISSION WHERE username = '$user' AND password = '$pass'";
 	$result = mysqli_query($conn,$sql);
 	$count = mysqli_num_rows($result);
 	if ($count == 1){
-		$cookie_value = "Admin";
+		$cookie_value = "Teacher";
 		setcookie($cookie_name, $cookie_value, time()+(180), "/");
 		header("location:hello.php");
 	}else{

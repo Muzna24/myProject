@@ -13,9 +13,9 @@ if(!$conn){
         $id = $row['student_id'];
         $name = $row['student_name'];
 		$level = $row['student_level'];
-		$address = $row['school_address'];
-        $email = $row['school_email'];
-        $phone = $row['school_id'];
+		$address = $row['student_address'];
+        $email = $row['student_email'];
+        $school_id = $row['school_id'];
     }
 ?>
 
@@ -27,7 +27,7 @@ if(!$conn){
 <body class="bg-dark">
 <form action="updateProcess.php?edit=<?php echo $id ?>" method="post">
 <fieldset style='width:500px'>
-<legend><b>Update School information</b></legend>
+<legend><b>Update Student information</b></legend>
 <table>
 <tr>
 <td>Name:</td><td><input type="text"  placeholder=" Student name " name="name" value="<?php echo $name ?>"></td>
